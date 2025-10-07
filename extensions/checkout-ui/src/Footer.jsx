@@ -22,7 +22,6 @@ function Extension() {
   };
 
   const reviews = [
-
     {
       name: "Fernanda Argandoña",
       verified: true,
@@ -36,17 +35,17 @@ function Extension() {
       location: "Chicago, IL",
     },
     {
-        name: "Jasper Calloway",
-        verified: true,
-        rating: 5,
-        title: "Impressed Before Even Opening the Toy",
-        content:
-          "I live out in the middle of nowhere near Wausau, IL – a beautiful place, but usually packages either take forever to arrive or get lost. Not with Kitty Kurlz! I haven't even opened the toy yet, but I'm already super impressed by their service. Shipping was fast, and when I messaged customer support to change my delivery address (since packages sometimes get stolen out here), they immediately jumped on the phone and took care of everything. 5/5 for customer support. It's rare to see a small company genuinely care like this. Highly recommend!",
-        avatarImage: `${cdnUrl}/review-avatar-2.png?width=120&height=120&crop=center`,
-        productImage: `${cdnUrl}/review-2.jpg?width=732&height=400&crop=center`,
-        daysAgo: 7,
-        location: "Wausau, IL",
-      },
+      name: "Jasper Calloway",
+      verified: true,
+      rating: 5,
+      title: "Impressed Before Even Opening the Toy",
+      content:
+        "I live out in the middle of nowhere near Wausau, IL – a beautiful place, but usually packages either take forever to arrive or get lost. Not with Kitty Kurlz! I haven't even opened the toy yet, but I'm already super impressed by their service. Shipping was fast, and when I messaged customer support to change my delivery address (since packages sometimes get stolen out here), they immediately jumped on the phone and took care of everything. 5/5 for customer support. It's rare to see a small company genuinely care like this. Highly recommend!",
+      avatarImage: `${cdnUrl}/review-avatar-2.png?width=120&height=120&crop=center`,
+      productImage: `${cdnUrl}/review-2.jpg?width=732&height=400&crop=center`,
+      daysAgo: 7,
+      location: "Wausau, IL",
+    },
     {
       name: "Selah Montgomery",
       verified: true,
@@ -126,13 +125,13 @@ function Extension() {
                   gap="small-200"
                   alignItems="center"
                 >
-                    <s-box inlineSize="16px" blockSize="16px">
+                  <s-box inlineSize="16px" blockSize="16px">
                     <s-image
-                    src={`${cdnUrl}/verified-user.svg`}
-                    alt="Verified"
-                  ></s-image>
-                    </s-box>
-                
+                      src={`${cdnUrl}/verified-user.svg`}
+                      alt="Verified"
+                    ></s-image>
+                  </s-box>
+
                   <s-text tone="success">Verified Purchase</s-text>
                 </s-grid>
               )}
