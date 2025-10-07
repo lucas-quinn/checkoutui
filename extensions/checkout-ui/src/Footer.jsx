@@ -23,40 +23,52 @@ function Extension() {
 
   const reviews = [
     {
+      name: "Jasper Calloway",
+      verified: true,
+      rating: 5,
+      title: "Impressed Before Even Opening the Toy",
+      content:
+        "I live out in the middle of nowhere near Wausau, IL – a beautiful place, but usually packages either take forever to arrive or get lost. Not with Kitty Kurlz! I haven't even opened the toy yet, but I'm already super impressed by their service. Shipping was fast, and when I messaged customer support to change my delivery address (since packages sometimes get stolen out here), they immediately jumped on the phone and took care of everything. 5/5 for customer support. It's rare to see a small company genuinely care like this. Highly recommend!",
+      avatarImage: `${cdnUrl}/review-avatar-1.png?width=80&height=80&crop=center`,
+      productImage: `${cdnUrl}/review-1.png?width=732&height=400&crop=center`,
+      daysAgo: 7,
+      location: "Wausau, IL",
+    },
+    {
       name: "Fernanda Argandoña",
       verified: true,
       rating: 5,
       title: "I didnt understand it but cat loved it!",
       content:
         "This was my first time getting Kitty Kurlz for my 12-week-old kitten, Ghost Pepper, and he was obsessed. He literally batted it around for almost 2 hours, which is wild because most toys only keep his attention for a few minutes. I've been worried about him getting lonely when I'm working, so it's such a relief to see him entertained and happy. Honestly, if he could talk I swear he'd be like, 'Mom, don't you dare take this toy away from me.' 😂 Definitely one of the best things I've bought for him.",
-      avatarImage: `${cdnUrl}/review-avatar-1.png?width=80&height=80&crop=center`,
-      productImage: `${cdnUrl}/review-1.png?width=600&height=600&crop=center`,
-      daysAgo: 7,
+      avatarImage: `${cdnUrl}/review-avatar-2.png?width=80&height=80&crop=center`,
+      productImage: `${cdnUrl}/review-2.jpg?width=732&height=400&crop=center`,
+      daysAgo: 15,
       location: "Chicago, IL",
     },
     {
-      name: "Sarah Mitchell",
+      name: "Selah Montgomery",
       verified: true,
       rating: 5,
-      title: "Best purchase ever!",
+      title: "You might need to buy one for your kids too LOL",
       content:
-        "My cats absolutely love this! They play with it every single day. The quality is amazing and it has held up really well even with two very active cats. I've tried many toys before but this one is by far their favorite. Would definitely recommend to any cat owner!",
-      avatarImage: `${cdnUrl}/review-avatar-2.png?width=80&height=80&crop=center`,
-      productImage: `${cdnUrl}/review-2.png?width=600&height=600&crop=center`,
-      daysAgo: 15,
-      location: "New York, NY",
+        "OK y'all, you won't believe this 😂 I had to buy ANOTHER Kitty Kurlz because my kids kept playing with it... and our cat was getting jealous that they were stealing his toy! 😂😂 Too funny!!",
+      avatarImage: `${cdnUrl}/review-avatar-3.png?width=80&height=80&crop=center`,
+      productImage: `${cdnUrl}/review-3.png?width=732&height=400&crop=center`,
+      daysAgo: 23,
+      location: "Miami, FL",
     },
     {
-      name: "Michael Chen",
+      name: "Mike Okada",
       verified: true,
       rating: 5,
-      title: "Five stars from both me and my cat!",
+      title: "my 3 cats love it – might buy more",
       content:
-        "I was skeptical at first, but this toy exceeded all my expectations. My usually picky cat took to it immediately. It's well-made, safe, and provides hours of entertainment. My cat even sleeps next to it now. Best $20 I've spent!",
-      avatarImage: `${cdnUrl}/review-avatar-3.png?width=80&height=80&crop=center`,
-      productImage: `${cdnUrl}/review-3.png?width=600&height=600&crop=center`,
-      daysAgo: 23,
-      location: "San Francisco, CA",
+        "I have four cats, so I grabbed the buy-2-get-2-free deal. Three of them absolutely loved Kitty Kurlz right away! My little tabby is only 3 weeks old, so he doesn't quite get it yet — but I'm sure in a couple of months he'll be chasing it too. Delivery was smooth and super fast, just like promised. Overall, I highly recommend Kitty Kurlz and the company for great toys and service!",
+      avatarImage: `${cdnUrl}/review-avatar-4.png?width=80&height=80&crop=center`,
+      productImage: `${cdnUrl}/review-4.png?width=732&height=400&crop=center`,
+      daysAgo: 31,
+      location: "Fort Bragg, California",
     },
   ];
 
@@ -74,7 +86,7 @@ function Extension() {
         >
           {/* Header with avatar, name, verified badge, and stars */}
           <s-grid gridTemplateColumns="auto 1fr" gap="base" alignItems="start">
-            {/* Avatar - optimized size */}
+            {/* Avatar - 40x40 */}
             <s-image
               src={review.avatarImage}
               alt={review.name}
@@ -93,13 +105,11 @@ function Extension() {
               >
                 <s-heading>{review.name}</s-heading>
                 {review.verified && (
-                
-                     <s-image
-                        src={`${cdnUrl}/verified-user.svg`}
-                        alt="Verified"
-                        inlineSize="auto"
-                      ></s-image>
-                
+                  <s-image
+                    src={`${cdnUrl}/verified-user.svg`}
+                    alt="Verified"
+                    inlineSize="auto"
+                  ></s-image>
                 )}
               </s-grid>
 
@@ -118,13 +128,12 @@ function Extension() {
           {/* Review content */}
           <s-text>{review.content}</s-text>
 
-          {/* Product image - optimized and cropped with rounded borders */}
+          {/* Product image - 366x200 with rounded borders */}
           {review.productImage && (
             <s-image
               src={review.productImage}
               alt="Product review"
-              inlineSize="fill"
-              aspectRatio="1/1"
+              aspectRatio="366/200"
               borderRadius="base"
             ></s-image>
           )}
