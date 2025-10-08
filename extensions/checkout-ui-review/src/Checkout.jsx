@@ -137,7 +137,7 @@ function Extension() {
                     ></s-image>
                   </s-box>
 
-                  <s-text tone="success">Verified Purchase</s-text>
+                  <s-text tone="success">Verified Buyer</s-text>
                 </s-grid>
               )}
             </s-grid>
