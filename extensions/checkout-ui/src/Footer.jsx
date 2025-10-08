@@ -39,8 +39,11 @@ function Extension() {
       verified: true,
       rating: 5,
       title: "Impressed Before Even Opening the Toy",
-      content:
-        "I live out in the middle of nowhere near Wausau, IL – a beautiful place, but usually packages either take forever to arrive or get lost. Not with Kitty Kurlz! I haven't even opened the toy yet, but I'm already super impressed by their service. Shipping was fast, and when I messaged customer support to change my delivery address (since packages sometimes get stolen out here), they immediately jumped on the phone and took care of everything. 5/5 for customer support. It's rare to see a small company genuinely care like this. Highly recommend!",
+      content: [
+        "I live out in the middle of nowhere near Wausau, IL – a beautiful place, but usually packages either take forever to arrive or get lost. Not with Kitty Kurlz!",
+        "I haven't even opened the toy yet, but I'm already super impressed by their service. Shipping was fast, and when I messaged customer support to change my delivery address (since packages sometimes get stolen out here), they immediately jumped on the phone and took care of everything.",
+        "5/5 for customer support. It's rare to see a small company genuinely care like this. Highly recommend!",
+      ],
       avatarImage: `${cdnUrl}/review-avatar-2.png?width=120&height=120&crop=center`,
       productImage: `${cdnUrl}/review-2.jpg?width=732&height=400&crop=center`,
       daysAgo: 7,
@@ -63,8 +66,10 @@ function Extension() {
       verified: true,
       rating: 5,
       title: "my 3 cats love it – might buy more",
-      content:
-        "I have four cats, so I grabbed the buy-2-get-2-free deal. Three of them absolutely loved Kitty Kurlz right away! My little tabby is only 3 weeks old, so he doesn't quite get it yet — but I'm sure in a couple of months he'll be chasing it too. Delivery was smooth and super fast, just like promised. Overall, I highly recommend Kitty Kurlz and the company for great toys and service!",
+      content: [
+        "I have four cats, so I grabbed the buy-2-get-2-free deal. Three of them absolutely loved Kitty Kurlz right away! My little tabby is only 3 weeks old, so he doesn't quite get it yet — but I'm sure in a couple of months he'll be chasing it too.",
+        "Delivery was smooth and super fast, just like promised. Overall, I highly recommend Kitty Kurlz and the company for great toys and service!",
+      ],
       avatarImage: `${cdnUrl}/review-avatar-4.png?width=120&height=120&crop=center`,
       productImage: `${cdnUrl}/review-4.png?width=732&height=400&crop=center`,
       daysAgo: 31,
@@ -141,8 +146,14 @@ function Extension() {
           {/* Review title */}
           <s-heading>{review.title}</s-heading>
 
-          {/* Review content */}
-          <s-text>{review.content}</s-text>
+          {/* Review content - supports both string and array */}
+          {Array.isArray(review.content) ? (
+            review.content.map((paragraph, index) => (
+              <s-text key={index}>{paragraph}</s-text>
+            ))
+          ) : (
+            <s-text>{review.content}</s-text>
+          )}
 
           {/* Product image - 366x200 with rounded borders */}
           {review.productImage && (
@@ -155,7 +166,11 @@ function Extension() {
           )}
 
           {/* Footer with date and location */}
-          <s-grid gridTemplateColumns="auto 1fr" gap="base" alignItems="center">
+          <s-grid
+            gridTemplateColumns="auto 1fr"
+            gap="small-500"
+            alignItems="center"
+          >
             <s-text color="subdued">
               Purchased {getPurchaseDate(review.daysAgo)}
             </s-text>

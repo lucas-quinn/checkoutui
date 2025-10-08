@@ -41,7 +41,7 @@ function Extension() {
           key={feature.title}
           gridTemplateColumns="auto 1fr"
           gap="base"
-          alignItems="start"
+          alignItems="center"
         >
           <s-image
             src={feature.icon}
@@ -49,7 +49,7 @@ function Extension() {
             inlineSize="auto"
             aspectRatio="1/1"
           ></s-image>
-          <s-grid gridTemplateColumns="1fr" gap="large">
+          <s-grid gridTemplateColumns="1fr" gap="small-400">
             <s-heading>{feature.title}</s-heading>
             <s-text>{feature.description}</s-text>
           </s-grid>
