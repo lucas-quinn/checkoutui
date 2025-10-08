@@ -16,7 +16,7 @@ function Extension() {
     date.setDate(date.getDate() - daysAgo);
     return date.toLocaleDateString("en-US", {
       year: "numeric",
-      month: "long",
+      month: "short",
       day: "numeric",
     });
   };
@@ -45,12 +45,12 @@ function Extension() {
         "5/5 for customer support. It's rare to see a small company genuinely care like this. Highly recommend!",
       ],
       avatarImage: `${cdnUrl}/review-avatar-2.png?width=120&height=120&crop=center`,
-      productImage: `${cdnUrl}/review-2.jpg?width=732&height=400&crop=center`,
+      productImage: `${cdnUrl}/review-2.png?width=672&height=367&crop=center`,
       daysAgo: 7,
       location: "Wausau, IL",
     },
     {
-      name: "Selah Montgomery",
+      name: "Selah Carter",
       verified: true,
       rating: 5,
       title: "You might need to buy one for your kids too LOL",
@@ -73,7 +73,7 @@ function Extension() {
       avatarImage: `${cdnUrl}/review-avatar-4.png?width=120&height=120&crop=center`,
       productImage: `${cdnUrl}/review-4.png?width=732&height=400&crop=center`,
       daysAgo: 31,
-      location: "Fort Bragg, California",
+      location: "Fort Bragg, CA",
     },
   ];
 
@@ -107,7 +107,7 @@ function Extension() {
             </s-box>
 
             {/* Name, Stars, and Verified Badge */}
-            <s-grid gridTemplateColumns="1fr" gap="small-100">
+            <s-grid gridTemplateColumns="1fr" gap="small-400">
               {/* First row: Name and Stars */}
               <s-grid
                 gridTemplateColumns="1fr auto"
@@ -116,11 +116,13 @@ function Extension() {
               >
                 <s-heading>{review.name}</s-heading>
                 {/* Star Rating - aligned to end */}
-                <s-image
-                  src={`${cdnUrl}/review-stars.svg`}
-                  alt="5 star rating"
-                  inlineSize="auto"
-                ></s-image>
+                <s-box inlineSize="100px" blockSize="20px">
+                  <s-image
+                    src={`${cdnUrl}/review-stars.svg`}
+                    alt="5 star rating"
+                    inlineSize="auto"
+                  ></s-image>
+                </s-box>
               </s-grid>
 
               {/* Second row: Verified Badge */}
