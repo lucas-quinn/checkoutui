@@ -12,25 +12,13 @@ function Extension() {
       icon: "https://cdn.shopify.com/s/files/1/0688/5235/1153/files/ship.svg?",
       title: "Fast and Reliable Shipping",
       description:
-        "2–4 days within the U.S. 5–7 days worldwide. No hidden delays.",
+        "Your cat can’t wait to play with Kitty Kurlz! Please allow 3–4 days for US delivery or 5–7 days for international orders.",
     },
     {
       icon: "https://cdn.shopify.com/s/files/1/0688/5235/1153/files/money.svg",
       title: "30-Day Money-Back Guarantee",
       description:
-        "Shop confidently. Quick and simple refunds, no questions asked.",
-    },
-    {
-      icon: "https://cdn.shopify.com/s/files/1/0688/5235/1153/files/secure.svg",
-      title: "Secure Checkout",
-      description:
-        "In partnership with Chase Bank, your payments are processed safely and securely.",
-    },
-    {
-      icon: "https://cdn.shopify.com/s/files/1/0688/5235/1153/files/tracking.svg",
-      title: "Real-Time Tracking",
-      description:
-        "Real-time updates at every stage of delivery — plus a 24/7 customer support team to help anytime.",
+        "We know cats have high standards (and we love that about them!). If Kitty Kurlz isn’t a perfect fit, just reach out — we’ll make it right, guaranteed.",
     },
   ];
 
