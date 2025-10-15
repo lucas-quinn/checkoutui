@@ -13,8 +13,7 @@ function Extension() {
   useEffect(() => {
     const date = new Date();
     const formattedDate = date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
+      month: "short",
       day: "numeric",
     });
     setCurrentDate(formattedDate);
@@ -25,30 +24,38 @@ function Extension() {
       border="base"
       borderStyle="dashed"
       borderRadius="large"
-      padding="large"
+      padding="none"
     >
-      <s-grid gridTemplateColumns="auto 1fr" gap="large" alignItems="center">
-        <s-box maxInlineSize="130px" >
+      <s-grid gridTemplateColumns="auto 1fr" gap="none" alignItems="center">
+        <s-box maxInlineSize="110px" padding="none">
           <s-image
             src="https://cdn.shopify.com/s/files/1/0592/0194/5677/files/cat-4.png"
             alt="Cat with birthday candle"
-            borderRadius="base"
+            borderRadius="large none none large"
             inlineSize="auto"
             aspectRatio="1/1"
           />
         </s-box>
 
-        <s-stack direction="block" gap="base">
-          <s-paragraph>
-            Today is Mr. Patches' 4th birthday, so your order already includes a{" "}
-            <s-text type="strong">Buy One, Get One Free</s-text> deal on Kitty
-            Kurlz and our{" "}
-            <s-text type="strong">30-day money-back guarantee.</s-text>
-          </s-paragraph>
-          <s-paragraph>
-            This birthday offer{" "}
-            <s-text type="strong">ends on {currentDate}</s-text>
-          </s-paragraph>
+        <s-stack direction="block" gap="small-300" padding="none small">
+          <s-box>
+            <s-paragraph>
+              <s-text type="small">
+                Today is Mr. Patches' 4th birthday, so your order already
+                includes a <s-text type="strong">Buy One, Get One Free</s-text>{" "}
+                deal on Kitty Kurlz and our{" "}
+                <s-text type="strong">30-day money-back guarantee.</s-text>
+              </s-text>
+            </s-paragraph>
+          </s-box>
+          <s-box>
+            <s-paragraph>
+            <s-text type="small">
+                This birthday offer{" "}
+                <s-text type="strong">ends on {currentDate}</s-text>
+              </s-text>
+            </s-paragraph>
+          </s-box>
         </s-stack>
       </s-grid>
     </s-box>
