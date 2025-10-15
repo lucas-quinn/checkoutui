@@ -27,7 +27,7 @@ function Extension() {
       padding="none"
     >
       <s-grid gridTemplateColumns="auto 1fr" gap="none" alignItems="center">
-        <s-box maxInlineSize="110px" padding="none">
+        <s-box inlineSize="110px" padding="none">
           <s-image
             src="https://cdn.shopify.com/s/files/1/0592/0194/5677/files/cat-4.png"
             alt="Cat with birthday candle"
