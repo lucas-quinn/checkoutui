@@ -1,5 +1,6 @@
 import "@shopify/ui-extensions/preact";
 import { render } from "preact";
+import { useState, useEffect } from "preact/hooks";
 
 // 1. Export the extension
 export default async () => {
@@ -7,42 +8,49 @@ export default async () => {
 };
 
 function Extension() {
-  const features = [
-    {
-      icon: "https://cdn.shopify.com/s/files/1/0688/5235/1153/files/ship.svg?",
-      title: "Fast and Reliable Shipping",
-      description:
-        "Your cat can’t wait to play with Kitty Kurlz! Please allow 3–4 days for US delivery or 5–7 days for international orders.",
-    },
-    {
-      icon: "https://cdn.shopify.com/s/files/1/0688/5235/1153/files/money.svg",
-      title: "30-Day Money-Back Guarantee",
-      description:
-        "We know cats have high standards (and we love that about them!). If Kitty Kurlz isn’t a perfect fit, just reach out — we’ll make it right, guaranteed.",
-    },
-  ];
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    setCurrentDate(formattedDate);
+  }, []);
 
   return (
-    <s-grid gridTemplateColumns="1fr" gap="large" padding="base">
-      {features.map((feature) => (
-        <s-grid
-          key={feature.title}
-          gridTemplateColumns="auto 1fr"
-          gap="base"
-          alignItems="center"
-        >
+    <s-box
+      border="base"
+      borderStyle="dashed"
+      borderRadius="large"
+      padding="large"
+    >
+      <s-grid gridTemplateColumns="auto 1fr" gap="large" alignItems="center">
+        <s-box maxInlineSize="130px" >
           <s-image
-            src={feature.icon}
-            alt={feature.title}
+            src="https://cdn.shopify.com/s/files/1/0592/0194/5677/files/cat-4.png"
+            alt="Cat with birthday candle"
+            borderRadius="base"
             inlineSize="auto"
             aspectRatio="1/1"
-          ></s-image>
-          <s-grid gridTemplateColumns="1fr" gap="small-400">
-            <s-heading>{feature.title}</s-heading>
-            <s-text>{feature.description}</s-text>
-          </s-grid>
-        </s-grid>
-      ))}
-    </s-grid>
+          />
+        </s-box>
+
+        <s-stack direction="block" gap="base">
+          <s-paragraph>
+            Today is Mr. Patches' 4th birthday, so your order already includes a{" "}
+            <s-text type="strong">Buy One, Get One Free</s-text> deal on Kitty
+            Kurlz and our{" "}
+            <s-text type="strong">30-day money-back guarantee.</s-text>
+          </s-paragraph>
+          <s-paragraph>
+            This birthday offer{" "}
+            <s-text type="strong">ends on {currentDate}</s-text>
+          </s-paragraph>
+        </s-stack>
+      </s-grid>
+    </s-box>
   );
 }
