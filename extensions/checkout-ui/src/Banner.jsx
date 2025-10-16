@@ -29,7 +29,7 @@ function Extension() {
       <s-grid gridTemplateColumns="auto 1fr" gap="none" alignItems="center">
         <s-box inlineSize="110px" padding="none">
           <s-image
-            src="https://cdn.shopify.com/s/files/1/0592/0194/5677/files/cat-4.png"
+            src="https://cdn.shopify.com/s/files/1/0592/0194/5677/files/cat-4.png?width=220"
             alt="Cat with birthday candle"
             borderRadius="large none none large"
             inlineSize="auto"
@@ -50,7 +50,7 @@ function Extension() {
           </s-box>
           <s-box>
             <s-paragraph>
-            <s-text type="small">
+              <s-text type="small">
                 This birthday offer{" "}
                 <s-text type="strong">ends on {currentDate}</s-text>
               </s-text>
